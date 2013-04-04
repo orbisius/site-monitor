@@ -29,7 +29,7 @@ Empty lines are skipped.
 Call this script from a cron job every 15 minutes.
 *\/5 0-23 * * * /usr/bin/php /path/to/monitor.php
 
-4. If you run into issues or want to suggest a feature submit a ticket at: https://github.com/orbisius/site-monitor
+4. If you run into issues or want to suggest a feature submit a ticket at: https://github.com/orbisius/site-monitor/issues
 
 5. If you are receiving multiple emails (more than the limit) please create a tmp folder in the same folder
 where the script resides. Make sure it has write permissions.
