@@ -28,7 +28,7 @@ e.g. 123456789@msg.telus.com for Telus customers.
 You can check sites.sample.txt for some ideas. Each site has to be on its own line.
 Comments are allowed and they should be prefixed by # (pound) sign. Empty lines are skipped.
 
-3. Setup cron a job.
+3. Setup a cron job.
 Running the script from console (cli) is the recommended approach as opposed to using lynx because
 if your site is down the monitoring script won't get executed.
 
