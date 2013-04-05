@@ -42,25 +42,23 @@ where the script resides. Make sure it has write permissions.
 @copyright (c) 2013, Svetoslav (SLAVI) Marinov
 @license LGPL
 */
-define('APP_BASE_DIR', dirname(__FILE__));
-define('APP_TMP_DIR', APP_BASE_DIR . '/tmp');
-define('APP_ALERT_THRESHOLD', 2); // how many failures have to happen before we consider a site offline
-define('APP_ALERT_LIMIT', 2); // send max that many alerts
-define('APP_ALERT_RESET', 4 * 3600); // how much does it have to pass before we reset the alerts
-define('APP_HOST', empty($_SERVER['HTTP_HOST']) ? `hostname` : $_SERVER['HTTP_HOST']);
+
+// If the private config is present load it.
+if (file_exists(dirname(__FILE__) . '/config_priv.php')) {
+    include_once(dirname(__FILE__) . '/config_priv.php');
+} elseif (file_exists(dirname(__FILE__) . '/config.php')) {
+    include_once(dirname(__FILE__) . '/config.php');
+}
 
 $alert = 0;
 $alert_online_sites = $alert_offline_sites = array();
 
-if (!file_exists(APP_BASE_DIR . '/sites.txt')) {
-    die('Please create sites.txt in the current directory.' . "\n");
+if (!defined('APP_BASE_DIR')) {
+    define('APP_BASE_DIR', dirname(__FILE__));
 }
 
-// If the private config is present load it.
-if (file_exists(APP_BASE_DIR . '/config_priv.php')) {
-    include_once(APP_BASE_DIR . '/config_priv.php');
-} elseif (file_exists(APP_BASE_DIR . '/config.php')) {
-    include_once(APP_BASE_DIR . '/config.php');
+if (!file_exists(APP_BASE_DIR . '/sites.txt')) {
+    die('Please create sites.txt in the current directory.' . "\n");
 }
 
 if (!defined('APP_ALERT_EMAIL')) {
