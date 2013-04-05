@@ -176,7 +176,11 @@ function app_get_check_file($site) {
  * @return boolean
  */
 function app_check_site($url) {
-    $agent = "Mozilla/5.0 (compatible; OrbisiusSiteMonitor/1.0; +http://orbisius.com)";
+    if (defined('APP_ALERT_USER_AGENT')) {
+        $agent = APP_ALERT_USER_AGENT;
+    } else {
+        $agent = "Mozilla/5.0 (compatible; OrbisiusSiteMonitor/1.0; +http://orbisius.com)";
+    }
 
     $ch = curl_init();
 
