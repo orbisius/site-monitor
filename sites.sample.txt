@@ -1,0 +1,10 @@
+################################################################################
+# You can put comments by prefixing them with a pound sign
+# You can use pound sign to deactivate a domain by insert # in front of the site
+################################################################################
+
+# My sites
+# site1.com
+
+# Clients
+# site2.com
