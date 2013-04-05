@@ -5,14 +5,16 @@ Site Monitor
 
 Description
 -----------------------------------------------------------------------------------------------
-The script will check if one or more sites are online and will send you a notificaiton.
+The script will check if one or more sites are online and will send you a notification.
 It will stop after the maximum alerts is reached. At some point if the site is
 still down the notifications will reset and you will start receiving them again.
 When the site comes back online the flag file is deleted and you'll get another
-notification. The notification emails are comined into one so you won't get multiple emails.
+notification. The notification emails are combined into one so you won't get multiple emails.
 
 This script is useful when you have multiple domains or manage domains on behalf of your clients.
 You want to be the first one to know when a website is down so you can quickly fix it.
+
+Video Demo: http://www.youtube.com/watch?v=Sw93JUc55Tc
 
 Usage:
 -----------------------------------------------------------------------------------------------
